@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KP SISTEM PENGELOLAAN ASET</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <nav>
+      <!-- Sidebar Offcanvas (Mobile) -->
+      <div
+        class="offcanvas offcanvas-start bg-dark text-white"
+        tabindex="-1"
+        id="sidebarMobile"
+      >
+        <div class="offcanvas-header flex-column">
+          <div class="logo-container mb-2 w-20 text-center align-items-center">
+            <img src="logo.png" alt="Logo" class="logo" />
+          </div>
+          <div class="d-flex justify-content-between w-100 align-items-center">
+            <h5 class="offcanvas-title mb-0">Menu</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+
+        <div class="offcanvas-body p-0">
+          <ul class="list-unstyled ps-3">
+            <li>
+              <a href="0-dashboard.html" class="text-white d-block py-2"
+                ><i class="fas fa-home me-2"></i>Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="1-kategori.html" class="text-white d-block py-2"
+                ><i class="fas fa-th-large me-2"></i>Kategori</a
+              >
+            </li>
+            <li>
+              <a href="2-daftar_aset.html" class="text-white d-block py-2"
+                ><i class="fas fa-box me-2"></i>Aset</a
+              >
+            </li>
+            <li>
+              <a href="3-penerimaan.html" class="text-white d-block py-2"
+                ><i class="fas fa-download me-2"></i>Penerimaan</a
+              >
+            </li>
+            <li>
+              <a href="4-pengecekan.html" class="text-white d-block py-2"
+                ><i class="fas fa-qrcode me-2"></i>Pengecekan</a
+              >
+            </li>
+
+            <li>
+              <a href="5-penghapusan.html" class="text-white d-block py-2"
+                ><i class="fas fa-trash me-2"></i>Penghapusan</a
+              >
+            </li>
+
+            <li>
+              <a href="#" class="text-white d-block py-2"
+                ><i class="fas fa-cog me-2"></i>Pengaturan</a
+              >
+            </li>
+            <li>
+              <a href="index.html" class="text-white d-block py-2"
+                ><i class="fas fa-sign-out-alt me-2"></i>Keluar</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sidebar Desktop -->
+      <div
+        class="sidebar d-none d-md-block bg-dark text-white p-3 position-fixed"
+      >
+        <div class="logo-container">
+          <img src="logo.png" alt="Logo" class="logo" />
+        </div>
+        <ul class="list-unstyled">
+          <li>
+            <a href="0-dashboard.html" class="text-white d-block py-2"
+              ><i class="fas fa-home me-2"></i>Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="1-kategori.html" class="text-white d-block py-2"
+              ><i class="fas fa-th-large me-2"></i>Kategori</a
+            >
+          </li>
+          <li>
+            <a href="2-daftar_aset.html" class="text-white d-block py-2"
+              ><i class="fas fa-box me-2"></i>Aset</a
+            >
+          </li>
+          <li>
+            <a href="3-penerimaan.html" class="text-white d-block py-2"
+              ><i class="fas fa-download me-2"></i>Penerimaan</a
+            >
+          </li>
+          <li>
+            <a href="4-pengecekan.html" class="text-white d-block py-2"
+              ><i class="fas fa-qrcode me-2"></i>Pengecekan
+            </a>
+          </li>
+
+          <li>
+            <a href="5-penghapusan.html" class="text-white d-block py-2"
+              ><i class="fas fa-trash me-2"></i>Penghapusan</a
+            >
+          </li>
+
+          <li>
+            <a href="#" class="text-white d-block py-2"
+              ><i class="fas fa-cog me-2"></i>Pengaturan</a
+            >
+          </li>
+          <li>
+            <a href="index.html" class="text-white d-block py-2"
+              ><i class="fas fa-sign-out-alt me-2"></i>Keluar</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="main-content p-4">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-md-none">
+          <button
+            class="btn btn-outline-dark"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebarMobile"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <h1>Aktivitas Penerimaan Aset</h1>
+        <div class="admin-info" role="button">
+          <span>Admin</span>
+          <i class="fas fa-user-circle"></i>
+        </div>
+      </div>
+
+      <div class="row g-2 align-items-end mb-3">
+        <div class="col-md-4">
+          <label class="form-label">Pencarian</label>
+          <input type="text" class="form-control" placeholder="Cari..." />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Tanggal</label>
+          <input
+            type="date"
+            class="form-control"
+            placeholder="Filter Tanggal"
+          />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label">Urutkan</label>
+          <select class="form-select">
+            <option value="desc">Tanggal Terbaru - Terlama</option>
+            <option value="asc">Tanggal Terlama - Terbaru</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table
+          class="table table-bordered table-hover align-middle text-center align-middle"
+        >
+          <thead class="align-middle">
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">ID Penerimaan</th>
+              <th scope="col">Tanggal Penerimaan</th>
+              <th scope="col" style="width: 40%; min-width: 100px">
+                Keterangan
+              </th>
+              <th scope="col">Petugas</th>
+              <th scope="col">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>01020240101</td>
+              <td>2024-01-01</td>
+              <td class="text-start">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Voluptatum vero repellat aliquam accusantium hic dolore ut est
+                numquam fugit. Illo quibusdam fugit assumenda nulla? Dicta ab
+                facere placeat id iste.
+              </td>
+              <td>TU 1</td>
+              <td class="text-center">
+                <div class="aksi-buttons">
+                  <a href="#" class="btn btn-sm-1">Detail</a>
+                  <a href="#" class="btn btn-sm-2">Cetak</a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>01020230101</td>
+              <td>2023-01-01</td>
+              <td class="text-start">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Dolorem, doloribus numquam. Eum fuga unde ullam nulla autem
+                corporis eligendi neque, nisi exercitationem veniam laudantium
+                consequuntur! Officiis deleniti sunt autem quia.
+              </td>
+              <td>TU 1</td>
+              <td class="text-center">
+                <div class="aksi-buttons">
+                  <a href="#" class="btn btn-sm-1">Detail</a>
+                  <a href="#" class="btn btn-sm-2">Cetak</a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>01020220101</td>
+              <td>2022-01-01</td>
+              <td class="text-start">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+                fugit odit consectetur odio facilis exercitationem ducimus! Nisi
+                perspiciatis praesentium nobis tempora itaque dolorem
+                reprehenderit molestiae fugiat numquam, ullam, maiores dolor.
+              </td>
+              <td>TU 2</td>
+              <td class="text-center">
+                <div class="aksi-buttons">
+                  <a href="#" class="btn btn-sm-1">Detail</a>
+                  <a href="#" class="btn btn-sm-2">Cetak</a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

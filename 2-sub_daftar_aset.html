@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KP SISTEM PENGELOLAAN ASET</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <!-- Sidebar Offcanvas (Mobile) -->
+      <div
+        class="offcanvas offcanvas-start bg-dark text-white"
+        tabindex="-1"
+        id="sidebarMobile"
+      >
+        <div class="offcanvas-header flex-column">
+          <div class="logo-container mb-2 w-20 text-center align-items-center">
+            <img src="logo.png" alt="Logo" class="logo" />
+          </div>
+          <div class="d-flex justify-content-between w-100 align-items-center">
+            <h5 class="offcanvas-title mb-0">Menu</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+
+        <div class="offcanvas-body p-0">
+          <ul class="list-unstyled ps-3">
+            <li>
+              <a href="0-dashboard.html" class="text-white d-block py-2"
+                ><i class="fas fa-home me-2"></i>Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="1-kategori.html" class="text-white d-block py-2"
+                ><i class="fas fa-th-large me-2"></i>Kategori</a
+              >
+            </li>
+            <li>
+              <a href="2-daftar_aset.html" class="text-white d-block py-2"
+                ><i class="fas fa-box me-2"></i>Aset</a
+              >
+            </li>
+            <li>
+              <a href="3-penerimaan.html" class="text-white d-block py-2"
+                ><i class="fas fa-download me-2"></i>Penerimaan</a
+              >
+            </li>
+            <li>
+              <a href="4-pengecekan.html" class="text-white d-block py-2"
+                ><i class="fas fa-qrcode me-2"></i>Pengecekan</a
+              >
+            </li>
+
+            <li>
+              <a href="5-penghapusan.html" class="text-white d-block py-2"
+                ><i class="fas fa-trash me-2"></i>Penghapusan</a
+              >
+            </li>
+
+            <li>
+              <a href="#" class="text-white d-block py-2"
+                ><i class="fas fa-cog me-2"></i>Pengaturan</a
+              >
+            </li>
+            <li>
+              <a href="index.html" class="text-white d-block py-2"
+                ><i class="fas fa-sign-out-alt me-2"></i>Keluar</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sidebar Desktop -->
+      <div
+        class="sidebar d-none d-md-block bg-dark text-white p-3 position-fixed"
+      >
+        <div class="logo-container">
+          <img src="logo.png" alt="Logo" class="logo" />
+        </div>
+        <ul class="list-unstyled">
+          <li>
+            <a href="0-dashboard.html" class="text-white d-block py-2"
+              ><i class="fas fa-home me-2"></i>Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="1-kategori.html" class="text-white d-block py-2"
+              ><i class="fas fa-th-large me-2"></i>Kategori</a
+            >
+          </li>
+          <li>
+            <a href="2-daftar_aset.html" class="text-white d-block py-2"
+              ><i class="fas fa-box me-2"></i>Aset</a
+            >
+          </li>
+          <li>
+            <a href="3-penerimaan.html" class="text-white d-block py-2"
+              ><i class="fas fa-download me-2"></i>Penerimaan</a
+            >
+          </li>
+          <li>
+            <a href="4-pengecekan.html" class="text-white d-block py-2"
+              ><i class="fas fa-qrcode me-2"></i>Pengecekan
+            </a>
+          </li>
+
+          <li>
+            <a href="5-penghapusan.html" class="text-white d-block py-2"
+              ><i class="fas fa-trash me-2"></i>Penghapusan</a
+            >
+          </li>
+
+          <li>
+            <a href="#" class="text-white d-block py-2"
+              ><i class="fas fa-cog me-2"></i>Pengaturan</a
+            >
+          </li>
+          <li>
+            <a href="index.html" class="text-white d-block py-2"
+              ><i class="fas fa-sign-out-alt me-2"></i>Keluar</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="main-content p-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="d-md-none">
+          <button
+            class="btn btn-outline-dark"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebarMobile"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <h1>Tambah Daftar Aset</h1>
+        <div class="admin-info" role="button">
+          <span>Admin</span>
+          <i class="fas fa-user-circle"></i>
+        </div>
+      </div>
+      <div>
+        <div class="mb-3">
+          <label for="tanggalPenerimaan" class="form-label required"
+            >Tanggal Penerimaan</label
+          >
+          <input type="date" class="form-control" id="tanggalPenerimaan" />
+        </div>
+
+        <h5>Daftar Barang</h5>
+        <div class="table-responsive">
+          <table
+            class="table table-bordered table-hover text-center align-middle"
+            id="tabelBarang"
+          >
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Barang</th>
+                <th>Kategori</th>
+                <th>Jumlah</th>
+                <th>Nilai Satuan</th>
+                <th>Total Nilai</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <button
+          class="btn btn-add btn-ukuran my-3"
+          data-bs-toggle="modal"
+          data-bs-target="#modalBarang"
+        >
+          Tambah Barang
+        </button>
+
+        <div class="mb-3">
+          <label for="dokumen" class="form-label"
+            >Upload Dokumen Penerimaan (PDF/JPG)</label
+          >
+          <input
+            type="file"
+            class="form-control"
+            id="dokumen"
+            accept=".pdf,.jpg,.jpeg,.png"
+          />
+        </div>
+      </div>
+      <button class="btn btn-add">Simpan Data</button>
+      <div class="modal fade" id="modalBarang" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Tambah Barang</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-2">
+                <label class="form-label required">Nama Barang</label>
+                <input type="text" class="form-control" id="namaBarang" />
+              </div>
+              <div class="mb-2">
+                <label class="form-label required">Kategori</label>
+                <select class="form-select" id="kategoriBarang">
+                  <option value="">Pilih Kategori</option>
+                  <option value="Elektronik">Elektronik</option>
+                  <option value="Alat Olahraga">Alat Olahraga</option>
+                  <option value="Alat Musik">Alat Musik</option>
+                  <option value="Alat Pratik">Alat Pratik</option>
+                </select>
+              </div>
+              <div class="mb-2">
+                <label class="form-label required">Jumlah</label>
+                <input
+                  type="number"
+                  min="1"
+                  class="form-control"
+                  id="jumlahBarang"
+                  value="1"
+                />
+              </div>
+              <div class="mb-2">
+                <label class="form-label required">Nilai Satuan</label>
+                <input
+                  type="number"
+                  min="0"
+                  class="form-control"
+                  id="nilaiSatuan"
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-add w-100"
+                id="tambahBarangBtn"
+              >
+                Selesai
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const daftarBarang = [];
+      const tabelBody = document.querySelector("#tabelBarang tbody");
+      const tambahBtn = document.getElementById("tambahBarangBtn");
+
+      function renderTabel() {
+        tabelBody.innerHTML = "";
+
+        if (daftarBarang.length === 0) {
+          tabelBody.innerHTML = `
+            <tr>
+              <td colspan="6" class="text-muted">Belum ada data.</td>
+            </tr>
+          `;
+          return;
+        }
+
+        daftarBarang.forEach((item, index) => {
+          const total = item.jumlah * item.nilai;
+          tabelBody.innerHTML += `
+            <tr>
+              <td>${index + 1}</td>
+              <td>${item.nama}</td>
+              <td>${item.kategori}</td>
+              <td>${item.jumlah}</td>
+              <td>Rp ${item.nilai.toLocaleString()}</td>
+              <td>Rp ${total.toLocaleString()}</td>
+            </tr>
+          `;
+        });
+      }
+      tambahBtn.addEventListener("click", function () {
+        const nama = document.getElementById("namaBarang").value.trim();
+        const kategori = document.getElementById("kategoriBarang").value;
+        const jumlah = parseInt(document.getElementById("jumlahBarang").value);
+        const nilai = parseInt(document.getElementById("nilaiSatuan").value);
+
+        if (
+          !nama ||
+          !kategori ||
+          isNaN(jumlah) ||
+          jumlah < 1 ||
+          isNaN(nilai) ||
+          nilai < 0
+        ) {
+          alert("Isi semua data dengan benar.");
+          return;
+        }
+        daftarBarang.push({ nama, kategori, jumlah, nilai });
+        renderTabel();
+        document.getElementById("namaBarang").value = "";
+        document.getElementById("kategoriBarang").value = "";
+        document.getElementById("jumlahBarang").value = "1";
+        document.getElementById("nilaiSatuan").value = "";
+        const modalElement = document.getElementById("modalBarang");
+        const modalInstance =
+          bootstrap.Modal.getInstance(modalElement) ||
+          new bootstrap.Modal(modalElement);
+        modalInstance.hide();
+      });
+      renderTabel();
+    });
+  </script>
+</html>
