@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KP SISTEM PENGELOLAAN ASET</title>
+    <title>Pengaturan - Sistem Pengelolaan Aset</title>
     <link href="styles.css" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -16,7 +16,7 @@
   </head>
   <body>
     <nav>
-      <!-- Sidebar Offcanvas (Mobile) -->
+      <!-- Sidebar Mobile -->
       <div
         class="offcanvas offcanvas-start bg-dark text-white"
         tabindex="-1"
@@ -36,7 +36,6 @@
             ></button>
           </div>
         </div>
-
         <div class="offcanvas-body p-0">
           <ul class="list-unstyled ps-3">
             <li>
@@ -64,13 +63,11 @@
                 ><i class="fas fa-qrcode me-2"></i>Pengecekan</a
               >
             </li>
-
             <li>
               <a href="5-penghapusan.html" class="text-white d-block py-2"
                 ><i class="fas fa-trash me-2"></i>Penghapusan</a
               >
             </li>
-
             <li>
               <a href="6-pengaturan.html" class="text-white d-block py-2"
                 ><i class="fas fa-cog me-2"></i>Pengaturan</a
@@ -115,16 +112,14 @@
           </li>
           <li>
             <a href="4-pengecekan.html" class="text-white d-block py-2"
-              ><i class="fas fa-qrcode me-2"></i>Pengecekan
-            </a>
+              ><i class="fas fa-qrcode me-2"></i>Pengecekan</a
+            >
           </li>
-
           <li>
             <a href="5-penghapusan.html" class="text-white d-block py-2"
               ><i class="fas fa-trash me-2"></i>Penghapusan</a
             >
           </li>
-
           <li>
             <a href="6-pengaturan.html" class="text-white d-block py-2"
               ><i class="fas fa-cog me-2"></i>Pengaturan</a
@@ -138,6 +133,8 @@
         </ul>
       </div>
     </nav>
+
+    <!-- Main Content -->
     <main class="main-content p-4">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <div class="d-md-none">
@@ -149,91 +146,54 @@
             <i class="fas fa-bars"></i>
           </button>
         </div>
-        <h1>Aktivitas Pengecekan Aset</h1>
+        <h1>Pengaturan</h1>
         <div class="TU-info" role="button">
           <span>TU</span>
           <i class="fas fa-user-circle"></i>
         </div>
       </div>
-      <div class="row g-2 align-items-end mb-3">
-        <div class="col-md-4">
-          <label class="form-label">Pencarian</label>
-          <input type="text" class="form-control" placeholder="Cari..." />
-        </div>
-        <div class="col-md-4">
-          <label class="form-label">Tanggal</label>
-          <input
-            type="date"
-            class="form-control"
-            placeholder="Filter Tanggal"
-          />
-        </div>
 
-        <div class="col-md-4 text-end">
-          <label class="form-label d-block invisible">.</label>
-          <button
-            class="btn btn-add w-100"
-            onclick="window.location.href='4-sub_pengecekan.html'"
-          >
-            <i class="fas fa-plus me-2"></i> Buat Aktivitas Baru
-          </button>
+      <div class="row g-3">
+        <div class="col-md-12 col-lg-6">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <i class="fas fa-user fa-2x mb-2"></i>
+              <h5 class="card-title">Profil Akun</h5>
+              <p class="card-text">Kelola informasi akun Anda</p>
+              <a href="#" class="btn btn-add w-100">Pilih</a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="table-responsive">
-        <table
-          class="table table-bordered table-hover text-center align-middle"
-        >
-          <thead class="align-middle">
-            <tr>
-              <th>No</th>
-              <th>ID Pengecekan</th>
-              <th>Tanggal</th>
-              <th>Petugas</th>
-              <th>Jumlah Barang</th>
-              <th>Baik</th>
-              <th>Rusak Sedang</th>
-              <th>Rusak Berat</th>
-              <th>Hilang</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>0220240101</td>
-              <td>2024-01-01</td>
-              <td>TU</td>
-              <td>5</td>
-              <td>5</td>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-              <td class="text-center">
-                <div class="aksi-buttons">
-                  <a href="#" class="btn btn-sm-1">Detail</a>
-                  <a href="#" class="btn btn-sm-2">Edit</a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>0220250101</td>
-              <td>2025-01-01</td>
-              <td>TU</td>
-              <td>15</td>
-              <td>13</td>
-              <td>0</td>
-              <td>2</td>
-              <td>0</td>
-              <td class="text-center">
-                <div class="aksi-buttons">
-                  <a href="#" class="btn btn-sm-1">Detail</a>
-                  <a href="#" class="btn btn-sm-2">Edit</a>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="col-md-12 col-lg-6">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <i class="fas fa-users-cog fa-2x mb-2"></i>
+              <h5 class="card-title">Manajemen Pengguna</h5>
+              <p class="card-text">Tambah atau ubah data pengguna</p>
+              <a href="#" class="btn btn-add w-100">Pilih</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-6">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <i class="fas fa-file-export fa-2x mb-2"></i>
+              <h5 class="card-title">Laporan Aset</h5>
+              <p class="card-text">Ekspor rekap data aset</p>
+              <a href="#" class="btn btn-add w-100 text-white">Pilih</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-6">
+          <div class="card text-center h-100">
+            <div class="card-body">
+              <i class="fas fa-tasks fa-2x mb-2"></i>
+              <h5 class="card-title">Laporan Aktivitas</h5>
+              <p class="card-text">Ekspor aktivitas aset</p>
+              <a href="#" class="btn btn-add w-100">Pilih</a>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
