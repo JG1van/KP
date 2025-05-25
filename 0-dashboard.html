@@ -162,45 +162,40 @@
       <h1 class="mb-4"></h1>
       <div class="Ringkasan Cepat">
         <div class="row mb-4">
-          <div class="col-md-4">
-            <div class="card card-stat p-3 text-center">
+          <div class="col-md-12">
+            <div class="card p-3 text-center">
               <h6>Total Aset</h6>
-              <h4>253</h4>
+              <h4>200</h4>
             </div>
           </div>
-          <div class="col-md-8">
-            <div class="card card-stat p-3 text-center">
-              <h6>Total Nilai Aset</h6>
-              <h4>Rp 100 Jt</h4>
+          <div class="col-6 col-md-6">
+            <div class="card p-3 text-center">
+              <h6>Aset Aktif</h6>
+              <h4>150</h4>
             </div>
           </div>
-          <div class="col-md-3">
-            <div class="card card-stat p-3 text-center">
-              <h6>Aset Baik</h6>
-              <h4>203</h4>
+
+          <div class="col-6 col-md-6">
+            <div class="card p-3 text-center">
+              <h6>Aset Tidak Aktif</h6>
+              <h4>150</h4>
             </div>
           </div>
-          <div class="col-md-3">
-            <div class="card card-stat p-3 text-center">
-              <h6>Aset Rusak Sedang</h6>
-              <h4>10</h4>
+          <div class="col-md-6">
+            <div class="card p-3 text-center">
+              <h6>Total Nilai Aset Aktif</h6>
+              <h4>Rp 100.000,00</h4>
             </div>
           </div>
-          <div class="col-md-3">
-            <div class="card card-stat p-3 text-center">
-              <h6>Aset Rusak Berat</h6>
-              <h4>20</h4>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card card-stat p-3 text-center">
-              <h6>Aset Hilang</h6>
-              <h4>20</h4>
+          <div class="col-md-6">
+            <div class="card p-3 text-center">
+              <h6>Total Nilai Aset Tidak Aktif</h6>
+              <h4>Rp 100.000,00</h4>
             </div>
           </div>
         </div>
       </div>
-      <div class="Grafik">
+      <div class="Grafik align-items-center">
         <div class="row">
           <div class="col-md-4">
             <canvas id="kondisiChart"></canvas>
@@ -219,17 +214,24 @@
       new Chart(kondisiChart, {
         type: "doughnut",
         data: {
-          labels: ["Baik", "Rusak Sedang", "Rusak Berat", "Hilang"],
+          labels: [
+            "Baik",
+            "Rusak Sedang",
+            "Rusak Berat",
+            "Hilang",
+            "Diremajakan",
+          ],
           datasets: [
             {
-              data: [200, 10, 20, 23],
+              data: [40, 40, 40, 40, 40],
               backgroundColor: [
-                "#4CAF50", // Hijau Baik
-                "#FFEB3B", // Kuning Sedang
-                "#FF9800", // Oranye Berat
-                "#F44336", // Merah Hilang
+                "#2ecc71", // Hijau Baik
+                "#f1c40f", // Kuning Sedang
+                "#e67e22", // Oranye Berat
+                "#e74c3c", // Merah Hilang
+                "#5DADE2", // Biru Muda Diremajakan
               ],
-              borderWidth: 2,
+              borderWidth: 5,
               borderColor: "#ffffff",
             },
           ],
@@ -250,7 +252,7 @@
             tooltip: {
               callbacks: {
                 label: function (context) {
-                  return `${context.label}: ${context.parsed} item`;
+                  return `${context.label}: ${context.parsed} Aset`;
                 },
               },
             },
@@ -264,17 +266,11 @@
       new Chart(kategoriChart, {
         type: "bar",
         data: {
-          labels: [
-            "Elektronik",
-            "Alat Olahraga",
-            "Alat Musik",
-            "Alat Praktek",
-            "Lainnya",
-          ],
+          labels: ["Elektronik", "Alat Olahraga", "Alat Musik", "Alat Praktek"],
           datasets: [
             {
               label: "Jumlah Aset",
-              data: [40, 40, 40, 40, 40],
+              data: [40, 40, 40, 40],
               backgroundColor: "#B05B3B",
               borderRadius: 6,
               barPercentage: 0.6,
